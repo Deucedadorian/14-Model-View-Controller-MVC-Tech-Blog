@@ -16,12 +16,13 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create Post');
+      alert('Failed to create post');
     }
   }
 };
 
 const delButtonHandler = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
