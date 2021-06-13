@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const postData = await post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -46,7 +46,6 @@ router.get('/post/:id', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
-    console.log('thos here dudn\'t work right');
   }
 });
 

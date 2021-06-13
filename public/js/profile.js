@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create Post');
     }
   }
 };
@@ -38,9 +38,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.post-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.post-list')
+  .addEventListener('click', delButtonHandler);

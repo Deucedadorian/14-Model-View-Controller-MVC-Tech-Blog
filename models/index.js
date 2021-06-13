@@ -21,7 +21,8 @@ Comment.belongsTo(Post, {
 })
 
 User.hasMany(Comment, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(User, {

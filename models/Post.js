@@ -16,7 +16,7 @@ Post.init(
       allowNull: false,
     },
     contents: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     date_created: {
@@ -37,7 +37,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Post',
+    modelName: 'post',
   }
 );
 
