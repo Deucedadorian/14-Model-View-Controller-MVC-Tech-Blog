@@ -1,29 +1,25 @@
 const updatePost = async (event) => {
     event.preventDefault();
 
+    const contents = document.querySelector('#comment-contents').value.trim();
 
-}
-
-const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/posts/${id}`, {
-        method: 'DELETE',
+    if (contents) {
+      const response = await fetch('/api/comments', {
+        method: 'POST',
+        body: JSON.stringify({ contents }),
+        header: {
+          'Content-Type': 'application/json',
+        },
       });
-  
+
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace(`/post/${req.params.id}`);
       } else {
-        alert('Failed to delete post');
+        alert('failed to create comment');
       }
     }
-  };
+}
   
   document
-    .querySelector('.new-post-form')
+    .querySelector('.new-comment-form')
     .addEventListener('submit', updatePost);
-  
-  document
-    .querySelector('.btn-danger')
-    .addEventListener('click', delButtonHandler);
