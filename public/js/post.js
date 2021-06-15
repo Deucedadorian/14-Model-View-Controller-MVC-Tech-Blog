@@ -6,8 +6,8 @@ const createComment = async (event) => {
     if (contents) {
       const response = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({ contents }),
-        header: {
+        body: JSON.stringify({ contents, id: window.post }),
+        headers: {
           'Content-Type': 'application/json',
         },
       });
