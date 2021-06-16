@@ -1,4 +1,9 @@
-header, .project:not(:last-child) {
+body {
+  background-color: #131516;
+  color: #d8d4cf;
+}
+
+header, .post:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
@@ -26,4 +31,11 @@ header, .project:not(:last-child) {
 .comment {
   border-radius: 8px;
   background-color: #065b83;
+  color: #ccc;
+}
+
+form .form-input {
+  color: rgb(216, 212, 207);
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(116, 108, 96);
 }
